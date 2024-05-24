@@ -1,29 +1,17 @@
-"use client";
-import { getLastMovie } from "../services/api/tmdb";
-import { useEffect, useState } from "react";
+import SelectProfile from '@/components/browse/SelectProfile/SelectProfile';
+import { useEffect, useState } from 'react';
 
 export const Browse: React.FC = () => {
-  const [tmdbData, setTmdbData] = useState<any>(null);
+  const [profilExist, setProfilExist] = useState<boolean>(false);
 
   useEffect(() => {
-    const fetchTmdbMovie = async () => {
-      try {
-        const data = await getLastMovie();
-        setTmdbData(data);
-      } catch (err) {
-        // setError("Error retrieving movie data");
-      } finally {
-        // setLoading(false);
-      }
-    };
-
-    fetchTmdbMovie();
+    if (localStorage.getItem('profilId')) setProfilExist(true);
   }, []);
+
+  if (!profilExist) return <SelectProfile />;
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {tmdbData?.original_title}
-      <br />
-      {tmdbData?.overview}
+    <main className="">
+      <SelectProfile />
     </main>
   );
 };
