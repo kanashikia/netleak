@@ -1,11 +1,31 @@
-import SelectProfile from '@/components/browse/SelectProfile/SelectProfile';
-import { getImages } from '@/lib/getImages';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+"use client";
+import { getLastMovie } from "../services/api/tmdb";
+import { useEffect, useState } from "react";
 
-export default async function BrowsePage() {
+export const Browse: React.FC = () => {
+  const [tmdbData, setTmdbData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchTmdbMovie = async () => {
+      try {
+        const data = await getLastMovie();
+        setTmdbData(data);
+      } catch (err) {
+        // setError("Error retrieving movie data");
+      } finally {
+        // setLoading(false);
+      }
+    };
+
+    fetchTmdbMovie();
+  }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <SelectProfile />
+      {tmdbData?.original_title}
+      <br />
+      {tmdbData?.overview}
     </main>
   );
-}
+};
+
+export default Browse;
