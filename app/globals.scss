@@ -1,9 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '~normalize.css/normalize';
 
 h1 {
   font-size: 3.5vw;
+}
+
+li {
+  list-style-type: none;
 }
 
 @media (max-width: 800px) {

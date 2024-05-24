@@ -1,4 +1,4 @@
-import SelectProfile from '@/components/browse/SelectProfile';
+import SelectProfile from '@/components/browse/SelectProfile/SelectProfile';
 import { getImages } from '@/lib/getImages';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 

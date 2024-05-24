@@ -1,0 +1,37 @@
+.list-profiles {
+  display: block;
+  max-width: 80%;
+
+  .choose-profile {
+    margin-inline-start: 2vh;
+    margin-inline-end: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+
+    .profile {
+      display: block;
+      margin-block-start: 2vw;
+      margin-block-end: 2vw;
+
+      .avatar-wrapper {
+        width: 10vw;
+        height: 10vw;
+        min-width: 84px;
+        min-height: 84px;
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 4px;
+      }
+
+      .profile-icon {
+        // width: 10vw;
+        // height: 10vw;
+        // min-width: 84px;
+        // min-height: 84px;
+        // max-width: 200px;
+        // max-height: 200px;
+        // border-radius: 4px;
+      }
+    }
+  }
+}
