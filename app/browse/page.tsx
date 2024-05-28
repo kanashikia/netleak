@@ -1,14 +1,6 @@
-import SelectProfile from '@/components/browse/SelectProfile/SelectProfile';
-import { useEffect, useState } from 'react';
+import SelectProfile from '@/components/browse/select-profile/select-profile';
 
 export const Browse: React.FC = () => {
-  const [profilExist, setProfilExist] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (localStorage.getItem('profilId')) setProfilExist(true);
-  }, []);
-
-  if (!profilExist) return <SelectProfile />;
   return (
     <main className="">
       <SelectProfile />

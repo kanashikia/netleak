@@ -1,6 +1,6 @@
 import { getImages } from '@/lib/getImages';
 import Image from 'next/image';
-import './SelectProfile.scss';
+import './select-profile.scss';
 
 export default function SelectProfile() {
   const images: string[] = getImages();

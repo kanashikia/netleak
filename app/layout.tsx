@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body style={bodyStyle}>
+      <body>
         <header style={{height: "8vh", width: "100vw", display: 'flex', justifyContent: "center", alignItems: "center"}}>test</header>
         {children}
         <footer>test</footer>
@@ -25,10 +25,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-const bodyStyle = {
-  height: "100vh",
-  width: "100vw",
-  display: "flex",
-  flexDirection: "column",
-};
